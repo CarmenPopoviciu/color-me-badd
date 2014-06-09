@@ -1,10 +1,56 @@
 <div>
     <div class="header">
-        <h1>Color me badd</h1>
-        <span>a drawing playground :)</span>
+        <h1 class="left">Color me badd</h1>
+        <span>...a drawing playground ;)</span>
     </div>
 
     <div class="content">
-        <span>Canvas</span>
+        <h3>My Canvas</h3>
+
+        <div class="tools">
+            <span class="tool-name left" ng-click="showTools=!showTools">Tools
+                <span class="expand-arrows" ng-show="!showTools">>></span>
+                <span class="expand-arrows" ng-show="showTools"><<</span>
+            </span>
+
+            <div ng-show="showTools">
+                <span ng-repeat="tool in tools">
+                    <input type="button" ng-click="setTool(tool)" value="{{tool}}"
+                           ng-class="{'active-button': isActiveTool(tool)}">
+                </span>
+            </div>
+        </div>
+
+        <div class="colors">
+            <span class="tool-name left" ng-click="showColors=!showColors">Colors
+                <span class="expand-arrows" ng-show="!showColors">>></span>
+                <span class="expand-arrows" ng-show="showColors"><<</span>
+            </span>
+
+            <div ng-show="showColors">
+                <span ng-repeat="color in colors">
+                    <input type="button" ng-click="setColor(color)" value="{{color.name}}"
+                        ng-class="{'active-button': isActiveColor(color)}" ng-disabled="tool==eraser">
+                </span>
+            </div>
+        </div>
+
+        <div class="sizes">
+            <span class="tool-name left" ng-click="showSizes=!showSizes">Sizes
+                <span class="expand-arrows" ng-show="!showSizes">>></span>
+                <span class="expand-arrows" ng-show="showSizes"><<</span>
+            </span>
+            </span>
+
+            <div ng-show="showSizes">
+                <span ng-repeat="size in sizes">
+                    <input type="button" ng-click="setLineWidth(size)" value="{{size.name}}"
+                           ng-class="{'active-button': isActiveSize(size)}" ng-disabled="disableSize(size)">
+                </span>
+            </div>
+        </div>
+
+        <div class="playground" color-me-badd height="400" width="600" color="{{color}}" line-width="{{lineWidth}}"
+             tool="{{tool}}" clear="{{showClear}}"></div>
     </div>
 </div>
