@@ -1,18 +1,104 @@
-/* Space out content a bit */
+/* BODY =============================== */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    font-family: sans-serif;
+    color: rgb(23, 112, 172);
 }
 
-/* Page header */
+/* HEADER =============================== */
 .header {
     padding-left: 15px;
     padding-right: 15px;
-    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EEE5E5;
+    height: 55px;
 }
 
-/* Page content */
+.header span {
+    display: inline-block;
+    margin-top: 37px;
+    font-size: 15px;
+}
+
+/* PAGE CONTENT =============================== */
 .content {
     padding-top: 20px;
     padding-left: 15px;
+}
+
+/* CANVAS =============================== */
+.canvas {
+    border: 3px solid #EEE5E5;
+    float: left;
+    margin: 15px;
+}
+
+/* BUTTONS =============================== */
+input[type='button'] {
+    width: 60px;
+    height: 25px;
+    background-color: rgb(215, 233, 238);
+    border: 1px solid lightgray;
+    border-radius: 0.2em;
+    font-size: 12px;
+    font-family: sans-serif;
+    color: rgb(54, 114, 155);
+}
+
+input[type='button']:disabled {
+    opacity: 0.3;
+}
+
+input.active-button {
+    opacity: 1;
+    font-weight: bold;
+    color: rgb(24, 88, 146);
+    background-color: rgb(159, 201, 224);
+}
+
+input[type='button'].clear {
+    margin-top: 15px;
+    background-color: rgb(221, 213, 213);
+}
+
+/* TOOL BUTTONS =============================== */
+.tool-name {
+    font-family: cursive;
+    font-size: 20px;
+    color: rgb(90, 90, 90);
+    margin-top: -3px;
+    cursor: pointer;
+}
+
+.tool-name:hover {
+    color: #B4A3A3;;
+}
+
+.colors, .sizes, .tools {
+    width: 500px;
+    height: 20px;
+    padding: 15px;
+}
+
+.tools .tool-name {
+    padding-right: 15px;
+}
+
+.colors .tool-name {
+    padding-right: 32px;
+}
+
+.sizes .tool-name {
+    padding-right: 60px;
+}
+
+.expand-arrows {
+    font-size: 9px;
+}
+
+/* GENERAL =============================== */
+.left {
+    float: left;
 }
